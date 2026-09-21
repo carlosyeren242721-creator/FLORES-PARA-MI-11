@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #050518;
+}
+
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #050518, #10104a 55%, #18240f);
+}
+
+/* Estrellas */
+
+.estrellas::before,
+.estrellas::after {
+    content: "✦  ·  ✧  ·  ✦  ·  .  ✧  ·  ✦  .  ·  ✧  .  ✦";
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 25px;
+    opacity: 0.7;
+    animation: brillar 3s infinite alternate;
+}
+
+.estrellas::before {
+    top: 12%;
+    left: 5%;
+}
+
+.estrellas::after {
+    top: 28%;
+    left: 35%;
+    font-size: 13px;
+}
+
+@keyframes brillar {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mensaje inicial */
+
+.mensaje {
+    position: absolute;
+    top: 13%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    opacity: 0;
+    animation: aparecer 3s forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Campo */
+
+.campo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65%;
+}
+
+/* Flores */
+
+.flor {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 420px;
+    transform-origin: bottom center;
+    animation: mover 4s ease-in-out infinite;
+}
+
+.flor1 {
+    left: 12%;
+    animation-delay: 0.2s;
+}
+
+.flor2 {
+    left: 43%;
+    height: 470px;
+    animation-delay: 0.8s;
+}
+
+.flor3 {
+    right: 10%;
+    animation-delay: 1.3s;
+}
+
+/* Tallos */
+
+.tallo {
+    position: absolute;
+    width: 9px;
+    height: 330px;
+    background: linear-gradient(to right, #245c18, #4b941e, #245c18);
+    bottom: 0;
+    left: 70px;
+    border-radius: 10px;
+}
+
+/* Pétalos */
+
+.petalos {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    left: 20px;
+    top: 20px;
+}
+
+.petalos span {
+    position: absolute;
+    width: 42px;
+    height: 65px;
+    background: #ffd21c;
+    border-radius: 50%;
+    left: 34px;
+    top: 20px;
+    transform-origin: 21px 35px;
+    box-shadow: 0 0 12px #ffdc3b;
+}
+
+.petalos span:nth-child(1) {
+    transform: rotate(0deg) translateY(-32px);
+}
+
+.petalos span:nth-child(2) {
+    transform: rotate(45deg) translateY(-32px);
+}
+
+.petalos span:nth-child(3) {
+    transform: rotate(90deg) translateY(-32px);
+}
+
+.petalos span:nth-child(4) {
+    transform: rotate(135deg) translateY(-32px);
+}
+
+.petalos span:nth-child(5) {
+    transform: rotate(180deg) translateY(-32px);
+}
+
+.petalos span:nth-child(6) {
+    transform: rotate(225deg) translateY(-32px);
+}
+
+.petalos span:nth-child(7) {
+    transform: rotate(270deg) translateY(-32px);
+}
+
+.petalos span:nth-child(8) {
+    transform: rotate(315deg) translateY(-32px);
+}
+
+/* Centro de la flor */
+
+.centro {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #8b4a08;
+    border-radius: 50%;
+    left: 52px;
+    top: 52px;
+    z-index: 3;
+    box-shadow: 0 0 10px #ffbd00;
+}
+
+/* Hojas */
+
+.hoja {
+    position: absolute;
+    width: 90px;
+    height: 35px;
+    background: #3e8d19;
+    border-radius: 100% 0;
+}
+
+.hoja1 {
+    left: 20px;
+    bottom: 130px;
+    transform: rotate(25deg);
+}
+
+.hoja2 {
+    left: 55px;
+    bottom: 200px;
+    transform: rotate(160deg);
+}
+
+/* Movimiento de flores */
+
+@keyframes mover {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/* TE AMO */
+
+.amor {
+    position: absolute;
+    top: 48%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: amor 2s 4s forwards;
+    z-index: 10;
+}
+
+.amor h1 {
+    color: #fff;
+    font-size: 70px;
+    letter-spacing: 8px;
+    text-shadow:
+        0 0 10px #ffdf00,
+        0 0 25px #ffae00,
+        0 0 40px #ff8c00;
+}
+
+.corazon {
+    font-size: 40px;
+    margin-top: 10px;
+    animation: latido 1s infinite;
+}
+
+@keyframes amor {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Botón */
+
+button {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 13px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #ffd21c;
+    color: #332000;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 0 15px #ffd21c;
+}
+
+button:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .mensaje {
+        font-size: 18px;
+        top: 10%;
+    }
+
+    .amor h1 {
+        font-size: 48px;
+        letter-spacing: 5px;
+    }
+
+    .flor {
+        transform: scale(0.75);
+        transform-origin: bottom center;
+    }
+
+    .flor1 {
+        left: -5%;
+    }
+
+    .flor2 {
+        left: 31%;
+    }
+
+    .flor3 {
+        right: -8%;
+    }
+
+}
